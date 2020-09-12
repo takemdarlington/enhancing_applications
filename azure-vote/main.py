@@ -31,7 +31,7 @@ logger.addHandler(
     AzureLogHandler(connection_string="InstrumentationKey=be659f5f-cf98-41be-8d25-2881254a5e60;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/")
 )
 logger.addHandler(
-    AzureEventHandler(connection_string=f'InstrumentationKey={InstrumentationKey}')
+    AzureEventHandler(connection_string="InstrumentationKey=be659f5f-cf98-41be-8d25-2881254a5e60;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/")
 )
 logger.setLevel(logging.INFO)
 
