@@ -28,22 +28,22 @@ from opencensus.ext.flask.flask_middleware import FlaskMiddleware
 logger = logging.getLogger(__name__)
 
 logger.addHandler(
-    AzureLogHandler(connection_string="InstrumentationKey=57ba124f-7249-40a7-9183-3c926128a4c5;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/")
+    AzureLogHandler(connection_string="InstrumentationKey=ad38d0e3-a621-4b41-882a-320a0e9f215b;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/")
 )
 logger.addHandler(
-    AzureEventHandler(connection_string="InstrumentationKey=57ba124f-7249-40a7-9183-3c926128a4c5;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/")
+    AzureEventHandler(connection_string="InstrumentationKey=ad38d0e3-a621-4b41-882a-320a0e9f215b;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/")
 )
 logger.setLevel(logging.INFO)
 
 # Metrics
 exporter = metrics_exporter.new_metrics_exporter(
     enable_standard_metrics=True,
-    connection_string="InstrumentationKey=57ba124f-7249-40a7-9183-3c926128a4c5;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/"
+    connection_string="InstrumentationKey=ad38d0e3-a621-4b41-882a-320a0e9f215b;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/"
 )
 
 # Tracing
 tracer = Tracer(
-    exporter=AzureExporter(connection_string="InstrumentationKey=57ba124f-7249-40a7-9183-3c926128a4c5;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/"),
+    exporter=AzureExporter(connection_string="InstrumentationKey=ad38d0e3-a621-4b41-882a-320a0e9f215b;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/"),
     sampler=ProbabilitySampler(1.0),
 )
 
@@ -52,7 +52,7 @@ app = Flask(__name__)
 # Requests
 middleware = FlaskMiddleware(
     app,
-    exporter=AzureExporter(connection_string="InstrumentationKey=57ba124f-7249-40a7-9183-3c926128a4c5;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/"),
+    exporter=AzureExporter(connection_string="InstrumentationKey=ad38d0e3-a621-4b41-882a-320a0e9f215b;IngestionEndpoint=https://westus2-0.in.applicationinsights.azure.com/"),
     sampler=ProbabilitySampler(rate=1.0),
 )
 
